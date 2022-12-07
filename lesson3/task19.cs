@@ -1,25 +1,77 @@
 // Задача 19. Напишите программу, которая принимает на вход пятизначное число и проверяет, является ли оно палиндромом.
 
-Console.WriteLine("Введите положительное пятизначное число.");
-string num = Console.ReadLine()!;
+int number;
 
-char[] array1 = {num[0],num[1],num[2],num[3],num[4]};
-char[] array2 = {num[4],num[3],num[2],num[1],num[0]};
-int magic = 0;
-
-for (int index = 0 ; index < num.Length ; index++)
+while (true)
 {
-    if(array1[index] == array2[index])
+    Console.WriteLine("Введите пятизначное число");
+    number = int.Parse(Console.ReadLine()!);
+    if (number <= 9999 && number >= -9999)
+    {
+        Console.WriteLine("Некорректный ввод. Повторите попытку");
+    }
+    else
+    {
+        break;
+    }
+}
+
+number = Math.Abs(number);
+int temp = number;
+int i = 1;
+
+while (number >= 10) // определение количества разрядов в числе
+{
+    number = number / 10;
+    i++;
+}
+
+int[] array = new int[i]; // создание массива по количеству разрядов заданного числа
+
+int icopy = i; // запоминание количества разрядов
+
+while (i > 0) // заполнение массива по разрядам 
+{
+    array[i - 1] = temp % 10;
+    temp = temp / 10;
+    i--;
+}
+
+/*
+for (int k = 0; k < array.Length; k++)  // вывод в консоль массива по элементам
+{
+    Console.Write($" {array[k]}");
+}
+*/
+
+int[] array2 = new int[icopy];
+
+for (int y = 0; y < array.Length; y++) // разворот массива
+{
+    array2[y] = array[(array.Length - 1) - y];
+}
+
+/*
+for (int k = 0; k < array.Length; k++)  // вывод в консоль обратного массива
+{
+    Console.Write($" {array2[k]}");
+}
+*/
+
+int magic = 0;
+for (int index = 0; index < array.Length; index++)
+{
+    if (array[index] == array2[index])
     {
         magic++;
     }
 }
 
-if (magic==num.Length)
+if (magic == array.Length)
 {
-    Console.WriteLine("ДА");
+    Console.WriteLine(" ДА, заданное число палиндромом");
 }
 else
 {
-    Console.WriteLine("НЕТ");
+    Console.WriteLine(" НЕТ, , заданное число не палиндромом");
 }
