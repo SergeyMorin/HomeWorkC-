@@ -1,3 +1,5 @@
+// Задача 19. Напишите программу, которая принимает на вход пятизначное число и проверяет, является ли оно палиндромом.
+
 int number;
 
 while (true)
@@ -63,6 +65,15 @@ for (int index = 0; index < array.Length; index++)
     {
         magic++;
     }
+}
+
+if (magic == array.Length)
+{
+    Console.WriteLine(" ДА, заданное число палиндромом");
+}
+else
+{
+    Console.WriteLine(" НЕТ, , заданное число не палиндромом");
 }
 
 if (magic == array.Length)

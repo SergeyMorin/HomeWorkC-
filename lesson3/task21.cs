@@ -14,3 +14,6 @@ double bnumber3 = double.Parse(Console.ReadLine()!);
 
 double ab = Math.Sqrt(Math.Pow(bnumber1-anumber1, 2) + Math.Pow(bnumber2-anumber2, 2) + Math.Pow(bnumber3-anumber3, 2));
 Console.WriteLine(ab);
+
+double ab = Math.Sqrt(Math.Pow(bnumber1-anumber1, 2) + Math.Pow(bnumber2-anumber2, 2) + Math.Pow(bnumber3-anumber3, 2));
+Console.WriteLine(ab);
