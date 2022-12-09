@@ -6,11 +6,14 @@ int numberA = int.Parse(Console.ReadLine()!);
 Console.Write("В какую степень необходимо возвести число А: B = ");
 int numberB = int.Parse(Console.ReadLine()!);
 
-int result = 1;
+Console.Write("число {0} в степени {1} равно {2}.", numberA, numberB, MathPower(numberA, numberB));
 
-for (int i = 1 ; i<=numberB ; i++)
+int MathPower(int A, int B)
 {
-    result*=numberA;
+    int result = 1;
+    for (int i = 1; i <= numberB; i++)
+    {
+        result *= numberA;
+    }
+    return result;
 }
-
-Console.Write("число {0} в степени {1} равно {2}.", numberA, numberB, result);
