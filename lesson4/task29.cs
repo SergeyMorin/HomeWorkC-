@@ -1,8 +1,12 @@
 // Задача 29: Напишите программу, которая задаёт массив из 8 элементов и выводит их на экран.
 
 Console.Write("Массив из скольки элементов требуется сгенерировать?");
-int i = int.Parse(Console.ReadLine()!);
+int n = int.Parse(Console.ReadLine()!);
 
+method(n);
+
+void method(int i)
+{
 int[] array = new int[i];
 while(i>0)
 {
@@ -15,3 +19,4 @@ for (i = 0; i < array.Length-1; i++)  // вывод в консоль масси
     Console.Write($"{array[i]}, ");
 }
 Console.Write($"{array[i]}]");
+}
