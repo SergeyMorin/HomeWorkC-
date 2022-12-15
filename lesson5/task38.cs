@@ -9,13 +9,13 @@ int min = int.Parse(Console.ReadLine()!);
 Console.Write("Максимальное значение элементов массива: ");
 int max = int.Parse(Console.ReadLine()!);
 Console.WriteLine(Method(n, min, max));
-int Method(int i, int mn, int mx)
+int Method(int size, int mn, int mx)
 {
     int result, mxel = mn, mnel = mx;
-    int[] array = new int[i];
+    int[] array = new int[size];
     Random random = new Random();
     Console.Write("[ ");
-    for (i = 0; i < array.Length; i++)
+    for (int i = 0; i < array.Length; i++)
     {
         array[i] = random.Next(mn, mx + 1);
         if (array[i] > mxel)

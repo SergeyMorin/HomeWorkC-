@@ -4,10 +4,10 @@
 Console.Write("Массив из скольки элементов требуется сгенерировать? ");
 int n = int.Parse(Console.ReadLine()!);
 Console.WriteLine(Method(n));
-int Method(int i)
+int Method(int size)
 {
     int x = 0;
-    int[] array = new int[i];
+    int[] array = new int[size];
     Random random = new Random();
     Console.Write("[ ");
     for (int i = 0; i < array.Length; i++)
