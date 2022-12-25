@@ -48,18 +48,15 @@ void PrintMatrix(double[,] array)
 double SmallestString(double[,] array)
 {
     double[] sumString = new double[array.GetLength(0)];
-    double min;
+    double min = double.MaxValue;
     for (int i = 0; i < array.GetLength(0); i++)
     {
         for (int j = 0; j < array.GetLength(1); j++)
         {
             sumString[i] += array[i, j];
-            if (i == 0)
-                min = sumString[i];
         }
         if (sumString[i] < min)
             min = sumString[i];
-
     }
     return min;
 }
