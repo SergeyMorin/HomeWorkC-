@@ -48,7 +48,7 @@ void Print3DMatrix(int[,,] matrix)
         {
             for (int k = 0; k < matrix.GetLength(2); k++)
             {
-                Console.Write(matrix[i, j, k] + " ");
+                Console.Write($"{matrix[i, j, k]}({j},{k},{i}) ");
             }
             Console.WriteLine();
         }
