@@ -6,19 +6,19 @@ int m = int.Parse(Console.ReadLine()!);
 Console.WriteLine("Задайте значение N");
 int n = int.Parse(Console.ReadLine()!);
 
-Console.Write(FromMToN(m, n));   
+Console.Write(SummFromMToN(m, n));
 
 int SummFromMToN(int m, int n)
 {
     int sum = 0;
     if (m == n)
     {
-        sum+=m;
+        sum += m;
         return sum;
     }
     else
     {
-        sum+=m;
-        return sum + SummFromMToN( m+1, n);
+        sum += m;
+        return sum + SummFromMToN(m + 1, n);
     }
 }
